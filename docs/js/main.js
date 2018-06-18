@@ -124,7 +124,6 @@ var Game = (function () {
     }
     Game.prototype.gameLoop = function () {
         this.currentscreen.update();
-        requestAnimationFrame(this.gameLoop.bind(this));
     };
     Game.prototype.showLevel = function () {
         document.body.innerHTML = "";
@@ -132,7 +131,7 @@ var Game = (function () {
         requestAnimationFrame(this.gameLoop.bind(this));
     };
     Game.prototype.showGameoverScreen = function () {
-        console.log("Game over!!!!!!");
+        console.log("Game over");
         document.body.innerHTML = "";
         this.currentscreen = new GameOver(this);
     };
@@ -162,7 +161,6 @@ var StartScreen = (function () {
     StartScreen.prototype.update = function () {
     };
     StartScreen.prototype.splashClicked = function () {
-        console.log("de game wordt wel gestart");
         this.game.showLevel();
     };
     return StartScreen;
